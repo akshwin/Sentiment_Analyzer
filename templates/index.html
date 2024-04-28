@@ -1,6 +1,6 @@
 <html>
   <head>
-    <body style="background-color:#154360;">
+    <body style="background-color:#343a40;">
     </body>
     <link
       rel="stylesheet"
@@ -62,28 +62,47 @@
     </style>
   </head>
   <body>
+
+<!-- Header-->
+
+<header>
+  <div class="navbar navbar-dark bg-dark ">
+    <div class="container">
+      <a href="" class="navbar-brand d-flex align-items-center">
+        <strong>Sentiment Analyzer App</strong>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!--Main page -->
+
     <div class="container mt-5">
       <div class="centered">
         <div class="text-center text-white">
-          <title>Sentiment Analyzer App</title>
-        </div>
-        <h1 class="header">Sentiment Analyzer App</h1>
-
-        <p class="desc">
-          Type a sentence below to predict the sentiment
-        </p>
-
-        <form method="POST" onSubmit="return validate();" class="form">
-          <div class="form-div">
-            <input type="text" name="text" class="form-control mr-2" />
-            <button type="submit" class="btn btn-outline-primary" onclick="this.form.submit();">
-              Predict
-            </button>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>    
+            <h1 class="fw-light">Enter the sentence </h1>
+            <br>
+            <p class="lead text-body-secondary">Lets predict the sentiment of the sentence !</p>
+            <br>
+            <p>
+              <form method="POST" onSubmit="return validate();" class="form">
+                <div class="form-div">
+                  <input type="text" name="text" class="form-control mr-2" />
+                  <button type="submit" class="btn btn-outline-light" onclick="this.form.submit();">
+                    Predict 
+                  </button> 
+                </div>
+              </form>
+            </p>
           </div>
-        </form>
-        <br />
-        <br />
-
+          <br>
         <p id="demo">{{ variable }}</p>
       </div>
     </div>
