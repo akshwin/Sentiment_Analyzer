@@ -1,0 +1,12 @@
+blinker==1.8.1
+click==8.1.7
+colorama==0.4.6
+Flask==3.0.3
+itsdangerous==2.2.0
+Jinja2==3.1.3
+joblib==1.4.0
+MarkupSafe==2.1.5
+nltk==3.8.1
+regex==2024.4.28
+tqdm==4.66.2
+Werkzeug==3.0.2
