@@ -1,110 +1,145 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <body style="background-color:#343a40;">
-    </body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment Analyzer</title>
+
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        background: linear-gradient(to right, #232526, #414345);
+        color: #f8f9fa;
+        font-family: 'Rubik', sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 48px;
+        font-weight: 600;
+      }
+
+      .lead {
+        font-size: 20px;
+        color: #ced4da;
+      }
+
+      .form-div {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      .form-div input {
+        border-radius: 10px;
+        border: none;
+        padding: 15px 20px;
+        font-size: 16px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .form-div input:focus {
+        outline: none;
+        box-shadow: 0 0 12px rgba(23, 162, 184, 0.7);
+      }
+
+      .form-div button {
+        border-radius: 10px;
+        background-color: transparent;
+        border: 2px solid #17a2b8;
+        color: #17a2b8;
+        padding: 12px 24px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .form-div button:hover {
+        background-color: #17a2b8;
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      #demo {
+        font-size: 24px;
+        font-weight: 600;
+        color: #ffc107;
+        margin-top: 30px;
+      }
+
+      .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      footer {
+        background-color: #1c1f22;
+        text-align: center;
+        padding: 15px 0;
+        color: #868e96;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand mx-auto" href="#">
+          <strong>Sentiment Analyzer App</strong>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+      <h1>Analyze Your Sentence</h1>
+      <p class="lead">Enter a sentence below to detect its sentiment in seconds!</p>
+
+      <form method="POST" onsubmit="return validate();" class="form-div mt-4">
+        <input type="text" name="text" class="form-control" placeholder="Type your sentence here..." required />
+        <button type="submit">Predict Sentiment</button>
+      </form>
+
+      <p id="demo">{{ variable }}</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Sentiment Analyzer App. All rights reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <style>
-      .centered {
-        position: relative;
-        text-align: center;
-        display: grid;
-        place-items: center;
-        color: white;
-      }
-
-      .header {
-        color: white;
-      }
-
-      p {
-        color: #FFFFFF;
-        font-family: 'Helvetica Neue', sans-serif;
-        font-size: 14px;
-        line-height: 24px;
-        margin: 0 0 24px;
-        text-justify: inter-word;
-      }
-
-      h1 {
-        color: #FFFFFF;
-        font-family: 'Helvetica Neue', sans-serif;
-        font-size: 36px;
-        font-weight: bold;
-        letter-spacing: -1px;
-        line-height: 1;
-        text-align: center;
-      }
-
-      #demo {
-        color: #FFFFFF;
-        font-family: 'Helvetica Neue', sans-serif;
-        font-size: 22px;
-        line-height: 24px;
-        margin: 0 0 24px;
-        text-justify: inter-word;
-      }
-
-      .form-div {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
-    </style>
-  </head>
-  <body>
-
-<!-- Header-->
-
-<header>
-  <div class="navbar navbar-dark bg-dark ">
-    <div class="container">
-      <a href="" class="navbar-brand d-flex align-items-center">
-        <strong>Sentiment Analyzer App</strong>
-      </a>
-    </div>
-  </div>
-</header>
-
-<!--Main page -->
-
-    <div class="container mt-5">
-      <div class="centered">
-        <div class="text-center text-white">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>    
-            <h1 class="fw-light">Enter the sentence </h1>
-            <br>
-            <p class="lead text-body-secondary">Lets predict the sentiment of the sentence !</p>
-            <br>
-            <p>
-              <form method="POST" onSubmit="return validate();" class="form">
-                <div class="form-div">
-                  <input type="text" name="text" class="form-control mr-2" />
-                  <button type="submit" class="btn btn-outline-light" onclick="this.form.submit();">
-                    Predict 
-                  </button> 
-                </div>
-              </form>
-            </p>
-          </div>
-          <br>
-        <p id="demo">{{ variable }}</p>
-      </div>
-    </div>
   </body>
 </html>
