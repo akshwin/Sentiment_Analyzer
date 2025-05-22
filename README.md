@@ -1,4 +1,3 @@
-```markdown
 # 🧠 Neuro Sentiment AI
 
 [![Deploy on Render](https://img.shields.io/badge/Deployed%20on-Render-46A2F1?logo=render)](https://neuro-sentiment-ai.onrender.com)
