@@ -1,2 +1,3 @@
-Flask==2.2.2
-nltk==3.6.6
+flask
+nltk
+gunicorn
