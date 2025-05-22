@@ -1,5 +1,3 @@
-#install libraries: nltk, flask
-
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
