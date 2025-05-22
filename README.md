@@ -132,12 +132,6 @@ This project is licensed under the MIT License.
 ## 👨‍💻 Author
 
 **Akshwin T**
-🎓 Final Year CSE Student @ VIT Vellore
-🔗 [LinkedIn](https://linkedin.com/in/your-link) | 🌐 [Portfolio](https://your-portfolio.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/akshwin/) | 🌐 [Portfolio](https://akshwin.github.io/akshwin.com/)
 
 ---
-
-  - Add your **LinkedIn** and **Portfolio** URLs if available.
-
-Would you like me to also help you generate a `render.yaml` file for auto-deployment from GitHub?
-```
